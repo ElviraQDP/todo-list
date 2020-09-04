@@ -7,11 +7,11 @@ const Todos = () => {
     const handleChange = (e) => {
         if (e.keyCode === 13) {   // capturamos el valor del todo cuando presionamos la tecla "enter"
             e.preventDefault()    // evitamos que la pagina se recargue ante el el evento "onChange"
-            setTodos([...todos, e.target.value]) // definimos queel todo capturado anteriormente se añada a un array de "todos"
+            setTodos([...todos, e.target.value]) // con el setTodos envias todo lo que tenias anteriormente en todos (...todos) mas el nuevo valor que tiene el e.target.value
             e.target.value = "" // esta linea boora el input una vez que sido capturado 
         }
     }
-    const handleClick = (i) => { // aqui capturamos el evento onChange
+    const handleClick = (i) => { // el handleClick recibe la posicion del elemnto al cual le estas dando click con la i
         const newTodos = [...todos] // clonar el array original
         newTodos.splice(i,1) // eliminar el elemento del array
         setTodos([...newTodos])
